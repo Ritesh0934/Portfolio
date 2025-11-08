@@ -1,0 +1,321 @@
+/* Reset some defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Let html & body take full height so background is visible */
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+}
+/* Header / container holding the title + nav */
+#heading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  height: auto; /* let it size naturally */
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  color: white;
+}
+
+/* Style nav container */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Group for left and right nav items */
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 20px;
+}
+
+/* Ensure nav-right is pushed to the far right */
+.nav-right {
+  margin-left: auto;
+}
+
+/* Button styles */
+nav a button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+nav a button:hover {
+  background-color: #2980b9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  #heading {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .navbar {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .nav-right {
+    margin-left: 0;
+    justify-content: center;
+    width: 100%;
+  }
+  .nav-left, .nav-right {
+    justify-content: center;
+  }
+}
+
+/* ======= Hero Image Section ======= */
+#d1 {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  opacity: 1;
+  animation: fadeIn 1s ease-in-out;
+}
+
+#d1 img {
+  max-width: 100%;
+  height: 400px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  transition: all 2s ease-in-out;
+  display: block;
+  opacity: 1;
+}
+
+img:hover{
+    border-radius: 30px;
+
+}
+/* ======= About Section ======= */
+#about {
+  max-width: 1000px;
+  margin: 120px auto 60px;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,248,255,0.9) 100%);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+  border: 1px solid rgba(255,255,255,0.2);
+  opacity: 1;
+  animation: fadeIn 1s ease-in-out;
+}
+
+#about h2 {
+  font-size: 2.5rem;
+  color: #3498db;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#about h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+#about p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+#about ul {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+#about ul li {
+  margin-bottom: 10px;
+}
+
+/* ======= Responsive ======= */
+@media (max-width: 768px) {
+  #heading {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-left, .nav-right {
+    justify-content: center;
+    width: 100%;
+  }
+
+  #about h2 {
+    font-size: 2rem;
+  }
+
+  #about h3 {
+    font-size: 1.3rem;
+  }
+}
+/* 🌆 Footer Styling */
+#footer {
+  /* background: linear-gradient(180deg, #1e272e, #2f3640, #353b48); Sleek multi-tone gradient */
+  background-color: #3b4a54;
+  color: #ecf0f1;
+  padding: 50px 25px;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 4px solid #00a8ff;
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.4);
+  font-family: 'Poppins', sans-serif;
+  backdrop-filter: blur(6px); /* Adds a modern glassy blur */
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  opacity: 1;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInBody {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+/* Subtle animated gradient shine */
+#footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.1), transparent);
+  animation: shine 6s infinite linear;
+}
+@keyframes shine {
+  from { left: -100%; }
+  to { left: 100%; }
+}
+
+/* Layout */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+/* Navigation links */
+.footer-nav {
+  display: flex;
+  gap: 35px;
+  font-weight: 600;
+}
+
+.footer-nav a {
+  color: #ecf0f1;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #00a8ff;
+  transform: translateY(-2px);
+}
+
+.footer-nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #00a8ff;
+  transition: width 0.3s ease;
+}
+
+.footer-nav a:hover::after {
+  width: 100%;
+}
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.social-icons a img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.social-icons a:hover img {
+  transform: scale(1.2);
+  box-shadow: 0 6px 15px rgba(0, 168, 255, 0.6);
+}
+
+/* Footer bottom */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 15px;
+  margin-top: 20px;
+  font-style: italic;
+  opacity: 0.85;
+  font-size: 0.85rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .social-icons {
+    justify-content: center;
+    margin-top: 15px;
+  }
+}
