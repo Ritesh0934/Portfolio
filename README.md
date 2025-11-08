@@ -79,6 +79,5 @@ Phone: 8689833280
 
 GitHub: github.com/ritesh0934
 
-Instagram / WhatsApp: [Insert your URLs]
 
 © 2025 Ritesh Pagar. All rights reserved.
